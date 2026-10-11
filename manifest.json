@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "alex.aws-vpn",
+  "name": "AWS VPN",
+  "version": "0.1.0",
+  "author": "Alexey Gausman",
+  "license": "MIT",
+  "description": "AWS Client VPN status, profile selection, and connect/disconnect in the Omarchy bar.",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "Panel.qml"
+  },
+  "barWidget": {
+    "displayName": "AWS VPN",
+    "description": "Connect, disconnect, and switch AWS Client VPN profiles via aws-vpn-client.",
+    "category": "Network",
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {
+      "refreshIntervalSec": 10
+    },
+    "schema": [
+      {
+        "key": "refreshIntervalSec",
+        "type": "integer",
+        "label": "Refresh interval (seconds)",
+        "min": 2,
+        "max": 3600,
+        "step": 1,
+        "defaultValue": 10
+      },
+      {
+        "key": "profile",
+        "type": "string",
+        "label": "Selected profile",
+        "defaultValue": ""
+      }
+    ]
+  }
+}
